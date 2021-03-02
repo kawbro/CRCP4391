@@ -1,12 +1,11 @@
-﻿/*
- * using System.Collections;
+﻿/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class NeoPlayerMovement : MonoBehaviour
 {
     //private PlayerAnimation player_Animation;
-    private RigidBody myBody;
+    //private 
 
     public float walk_Speed = 3f;
     public float z_Speed = 1.5f;
