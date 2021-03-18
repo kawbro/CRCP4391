@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NeoPlayerMovement : MonoBehaviour
+/*public class NeoPlayerMovement : MonoBehaviour
 {
     //private PlayerAnimation player_Animation
     private Rigidbody myBody;
@@ -30,3 +30,4 @@ public class NeoPlayerMovement : MonoBehaviour
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
     }
 }
+*/

@@ -3,7 +3,17 @@ guid: bdfc36ec143ae3347abecf186adba91e
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Beta_Joints_MAT
+    second: {fileID: 2100000, guid: ad0fbf3c50d69d04b905fadd4adfbb2f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: asdf1_Beta_HighLimbsGeoSG2
+    second: {fileID: 2100000, guid: 4dc1a7cf4641c374ab35272b19ad4779, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -73,6 +83,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips:
+  - 7e898fd31f5512b4fa51dc2276dca929
   - 93f2eff306399cb42a223a4c70bfe71a
   importAnimation: 1
   humanDescription:
