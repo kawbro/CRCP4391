@@ -9,10 +9,13 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rigid;
 
 
+    //private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
-        rigid = GetComponent<Rigidbody>();
+        rigid = GetComponent<Rigidbody>(); //initialize the rigid body for player physics
+        //animator = GetComponent<Animator>(); //initialize the animator for the player's animations
     }
 
     // Update is called once per frame
@@ -24,5 +27,11 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = new Vector3(Horizontal, 0.0f, Vertical);
 
         rigid.AddForce(move * speed);
+
+        /*if(Input.GetKey("p"))
+        {
+            animator.SetTrigger("Punch");
+            Debug.Log(gameObject.name + "P-1");
+        }*/
     }
 }
