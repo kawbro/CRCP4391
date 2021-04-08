@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
 public class PlayerMovement : MonoBehaviour
 {
     public float speed;
@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetTrigger("Punch");
             Debug.Log(gameObject.name + "P-1");
-        }*/
+        }
     }
 }
+*/

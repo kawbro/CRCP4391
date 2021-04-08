@@ -8,14 +8,15 @@ public class HealthSYSTest : MonoBehaviour
 {
     //Change to private ints when transistioned to player specific script
     public int currentHealth; //Current health for player
-    public int totalHealth; //Total health for player
+    public int maxHealth = 100; //Total health for player
+
+    public HealthBarScript healthBar;
 
     // Start is called before the first frame update
     void Start()
     {
-        totalHealth = 100;
-        currentHealth = totalHealth;
-
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -23,8 +24,15 @@ public class HealthSYSTest : MonoBehaviour
     {
         if (Input.GetKeyDown("p"))
         {
-            currentHealth -= 20;
+            TakeDamage(20);
             Debug.Log(gameObject.name + " " + currentHealth);
         }
+    }
+
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        healthBar.SetHealth(currentHealth);
     }
 }
