@@ -5,7 +5,7 @@ using UnityEngine;
 public class P2Movement : MonoBehaviour
 {
 
-    public float speed;
+    public float speed = 0.1f;
 
 
     // Start is called before the first frame update
@@ -17,21 +17,28 @@ public class P2Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.position += Vector3.left * speed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.position += Vector3.right * speed * Time.deltaTime;
-        }
+        float xDirection = Input.GetAxis("Horizontal"); //Moves left & right
+        float zDirection = Input.GetAxis("Vertical"); //Moves fowards & backwards
+
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            transform.position += Vector3.up * speed * Time.deltaTime;
+            Vector3 moveDirection = new Vector3(xDirection, 0.0f, zDirection);
+            transform.position += moveDirection * speed;
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            transform.position += Vector3.down * speed * Time.deltaTime;
+            Vector3 moveDirection = new Vector3(xDirection, 0.0f, zDirection);
+            transform.position += moveDirection * speed;
+        }
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            Vector3 moveDirection = new Vector3(xDirection, 0.0f, zDirection);
+            transform.position += moveDirection * speed;
+        }
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            Vector3 moveDirection = new Vector3(xDirection, 0.0f, zDirection);
+            transform.position += moveDirection * speed;
         }
     }
 }

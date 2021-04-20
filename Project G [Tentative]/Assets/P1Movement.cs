@@ -5,7 +5,7 @@ using UnityEngine;
 public class P1Movement : MonoBehaviour
 {
 
-    public float speed;
+    public float speed = 0.1f;
 
 
     // Start is called before the first frame update
@@ -17,21 +17,29 @@ public class P1Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("w"))
+        float xDirection = Input.GetAxis("Horizontal"); //Moves left & right
+        float zDirection = Input.GetAxis("Vertical"); //Moves fowards & backwards
+
+        if (Input.GetKey(KeyCode.W))
         {
-            transform.position += Vector3.left * speed * Time.deltaTime;
+            Vector3 moveDirection = new Vector3(xDirection, 0.0f, zDirection);
+            //transform.position += Vector3.left * speed * Time.deltaTime;
+            transform.position += moveDirection * speed;
         }
-        if (Input.GetKey("s"))
+        if (Input.GetKey(KeyCode.S))
         {
-            transform.position += Vector3.right * speed * Time.deltaTime;
+            Vector3 moveDirection = new Vector3(xDirection, 0.0f, zDirection);
+            transform.position += moveDirection * speed;
         }
-        if (Input.GetKey("a"))
+        if (Input.GetKey(KeyCode.A))
         {
-            transform.position += Vector3.up * speed * Time.deltaTime;
+            Vector3 moveDirection = new Vector3(xDirection, 0.0f, zDirection);
+            transform.position += moveDirection * speed;
         }
-        if (Input.GetKey("d"))
+        if (Input.GetKey(KeyCode.D))
         {
-            transform.position += Vector3.down * speed * Time.deltaTime;
+            Vector3 moveDirection = new Vector3(xDirection, 0.0f, zDirection);
+            transform.position += moveDirection * speed;
         }
     }
 }
