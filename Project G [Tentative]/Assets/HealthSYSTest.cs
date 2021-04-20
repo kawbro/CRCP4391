@@ -27,6 +27,11 @@ public class HealthSYSTest : MonoBehaviour
             TakeDamage(20);
             Debug.Log(gameObject.name + " " + currentHealth);
         }
+
+        if(currentHealth == 0)
+        {
+            Time.timeScale = 0;
+        }
     }
 
     void TakeDamage(int damage)
