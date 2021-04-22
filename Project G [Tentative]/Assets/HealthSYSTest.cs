@@ -12,6 +12,9 @@ public class HealthSYSTest : MonoBehaviour
 
     public HealthBarScript healthBar;
 
+    public bool isHit;
+    public int Damage = 20;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,20 +27,35 @@ public class HealthSYSTest : MonoBehaviour
     {
         if (Input.GetKeyDown("p"))
         {
-            TakeDamage(20);
+            if(P1Movement.LaunchAttack(Collider col) == 1)
+            {
+                TakeDamage(Damage);
+                healthBar.SetHealth(currentHealth);
+            }
             Debug.Log(gameObject.name + " " + currentHealth);
         }
 
         if(currentHealth == 0)
         {
-            Time.timeScale = 0;
+            Time.timeScale = 0; //Stops game when health reaches 0
         }
+    }
+
+    private void OnTriggerEnter(Collider col)
+    {
+        if(col.tag == "Player 1" || col.tag == "Player 2")
+        {
+            col.SendMessage((isHit)?"TakeDamage":null, Damage);
+            TakeDamage(Damage);
+        }
+       
     }
 
     void TakeDamage(int damage)
     {
+        damage = Damage;
         currentHealth -= damage;
 
-        healthBar.SetHealth(currentHealth);
+        //healthBar.SetHealth(currentHealth);
     }
 }
