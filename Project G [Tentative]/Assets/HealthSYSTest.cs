@@ -25,13 +25,14 @@ public class HealthSYSTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("p"))
+        if (Input.GetKeyDown(KeyCode.U))
         {
-            if(P1Movement.LaunchAttack(Collider col) == 1)
-            {
+            //if(P1Movement.LaunchAttack(Collider col) == 1)
+            //{
                 TakeDamage(Damage);
+            //healthBar = Health Bar P1;
                 healthBar.SetHealth(currentHealth);
-            }
+            //}
             Debug.Log(gameObject.name + " " + currentHealth);
         }
 

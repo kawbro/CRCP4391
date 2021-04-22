@@ -17,13 +17,13 @@ public class AnimationScript : MonoBehaviour
     void Update()
     {
         //Punch trigger
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.U))
         {
             animator.SetTrigger("Punch");
             Debug.Log(gameObject.name + "P-1");
         }
 
-        if(Input.GetKeyUp(KeyCode.P))
+        if(Input.GetKeyUp(KeyCode.U))
         {
             animator.SetTrigger("Reset");
             Debug.Log(gameObject.name + "P-0");

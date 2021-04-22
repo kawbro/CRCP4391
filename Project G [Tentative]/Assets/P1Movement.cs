@@ -44,7 +44,7 @@ public class P1Movement : MonoBehaviour
         }
 
         //Attacks
-        if(Input.GetKeyDown(KeyCode.P))
+        if(Input.GetKeyDown(KeyCode.U))
         {
             LaunchAttack(attackHitboxes[0]);
         }
