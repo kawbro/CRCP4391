@@ -39,6 +39,7 @@ public class P1HealthSYS: MonoBehaviour
         if (currentHealth == 0)
         {
             Time.timeScale = 0; //Stops game when health reaches 0
+            Application.Quit();
         }
     }
 
@@ -52,7 +53,7 @@ public class P1HealthSYS: MonoBehaviour
 
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         damage = Damage;
         currentHealth -= damage;

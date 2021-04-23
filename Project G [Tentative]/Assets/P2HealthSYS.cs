@@ -39,6 +39,7 @@ public class P2HealthSYS : MonoBehaviour
         if (currentHealth == 0)
         {
             Time.timeScale = 0; //Stops game when health reaches 0
+            Application.Quit();
         }
     }
 

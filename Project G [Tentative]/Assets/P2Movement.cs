@@ -17,6 +17,12 @@ public class P2Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Game exit
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
         float xDirection = Input.GetAxis("Horizontal"); //Moves left & right
         float zDirection = Input.GetAxis("Vertical"); //Moves fowards & backwards
 

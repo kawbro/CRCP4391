@@ -9,6 +9,9 @@ public class P1Movement : MonoBehaviour
 
     public Collider[] attackHitboxes;
 
+    //public P1HealthSYS health; //Test to see if hit detection works better
+    //int damage = 20;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +21,12 @@ public class P1Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Game exit
+        if(Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
         //Movement
         float xDirection = Input.GetAxis("Horizontal"); //Moves left & right
         float zDirection = Input.GetAxis("Vertical"); //Moves fowards & backwards
@@ -50,7 +59,7 @@ public class P1Movement : MonoBehaviour
         }
     }
 
-    public int LaunchAttack(Collider col) //test if private is better
+    public void LaunchAttack(Collider col) //test if private is better
     {
         Collider[] cols = Physics.OverlapBox(col.bounds.center, col.bounds.extents, col.transform.rotation, LayerMask.GetMask("Hitbox"));
         foreach (Collider c in cols)
@@ -60,10 +69,11 @@ public class P1Movement : MonoBehaviour
                 continue;
             }
             Debug.Log("Hit " + c.name);
-            return 1;
+            //return 1;
+            //health.TakeDamage(damage);
         }
 
-        return 0;
+       // return 0;
 
 
     }
